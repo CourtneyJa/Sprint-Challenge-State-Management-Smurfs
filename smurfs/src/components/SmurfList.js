@@ -13,9 +13,10 @@ const SmurfList = props =>{
     }
 
     return(
-        <div className = 'smurf-list'>
-            {props.error && <p>{props.error}</p>}
-            {props.smurfs.map(item => <Smurf key={item.id} name={item.name} age={item.age} height={item.height}/>)}
+        <div className = 'smurf-list'>    
+            {this.props.smurfs.data ? this.props.smurfs.data.map((smurf, i)=>{
+                return <Smurf key={i} smurf={smurf}/>;
+            }): null}
         </div>
     )
 }
