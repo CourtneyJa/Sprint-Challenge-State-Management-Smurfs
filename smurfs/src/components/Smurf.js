@@ -1,32 +1,55 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { editSmurf } from "../Actions/Action";
+// import React, { useState } from "react";
+// import { editSmurf, removeSmurf } from "../Actions/Action";
+// import { connect } from "react-redux";
 
-const Smurf = props => {
-  const [name] = useState("");
-  const [age] = useState("");
-  const [height] = useState("");
+// const Smurf = props => {
+  
+//   const [smurf, setSmurf]=useState({
+//     name: '',
+//     age: '',
+//     height: '',
+//     id: null
+//   },console.log(useState))
 
-  const handleChanges = e => {
-    let edit = {
-      name: name,
-      age: age,
-      height: height
-    };
-    props.editSmurf(edit);
-  };
+//   const handleSubmit = e => {
+//     e.prevent.default();
+//     setSmurf({name: "", age: "", height: "", id: null });
+//   };
 
-  return (
-    <form onChange={handleChanges}>
-      <div className="smurfs">
-        <h3>{`Name: ${props.name}`}</h3>
-        <p>{`Age: ${props.age}`}</p>
-        <p>{`Height: ${props.height}`}</p>
-        <button type="submit">X</button>
-        <button type="submit">Edit</button>
-      </div>
-    </form>
-  );
-};
+//   return (
+//     <div>
+//       <form onSubmit={handleSubmit}>
+//         <h3>{props.smurf.name}</h3>
+//         <p>{props.smurf.age}</p>
+//         <p>{props.smurf.height}</p>
+//         <div>
+//           <button
+//             type="submit"
+//             onClick={() => props.removeSmurf(props.smurf.id)}
+//           >
+//             X
+//           </button>
+//           <button type="submit" onClick={() => props.editSmurf(props.smurf.id)}>
+//             Edit
+//           </button>
+//         </div>
+//         {props.isEditing && (
+//           <>
+//             <input name="name" />
+//             <input name="age" />
+//             <input name="height" />
+//           </>
+//         )}
+//       </form>
+//     </div>
+//   );
+// };
 
-export default connect(null, { editSmurf })(Smurf);
+// const mapStateToProps = state => {
+//   return {
+//     isEditing: state.isEditing,
+//     error: state.error
+//   }
+// }
+
+// export default connect(mapStateToProps, { editSmurf, removeSmurf })(Smurf);

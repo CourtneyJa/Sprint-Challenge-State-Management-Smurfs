@@ -1,30 +1,39 @@
-import React, {useEffect} from 'react';
-import Smurf from './Smurf';
-import {fetchSmurfs} from '../Actions/Action';
-import {connect} from 'react-redux';
+// import React, {useEffect} from "react";
+// import { fetchSmurfs } from "../Actions/Action";
+// import { connect } from "react-redux";
+// import {Card} from 'semantic-ui-react';
 
-const SmurfList = props =>{
-    useEffect (()=>{
-        props.fetchSmurfs();
-    }, [])
 
-    if(props.isFetching){
-        return <h1>Loading Smurf Villagers...</h1>
-    }
+// const SmurfList = ({fetchSmurfs, smurfs}) => {
 
-    return(
-        <div className = 'smurf-list'>    
-            {this.props.smurfs.data ? this.props.smurfs.data.map((smurf, i)=>{
-                return <Smurf key={i} smurf={smurf}/>;
-            }): null}
-        </div>
-    )
-}
+//   useEffect(()=>{
+//     fetchSmurfs();
+//   },[fetchSmurfs]);
 
-const mapStateToProps = state => {
-    return{
-        smurfs: state.smurfs
-    }
-}
+//   console.log('la x 11', smurfs)
+  
 
-export default connect(mapStateToProps, {fetchSmurfs})(SmurfList);
+//   return (
+//     <div className='card'>
+//       {smurfs.map(smurf=>{
+//         return(
+//           <Card key={smurf.id}>
+//             <Card.Content>
+//             <Card.Header>{smurf.name}</Card.Header>
+//             <Card.Meta>{smurf.age}</Card.Meta>
+//             <Card.Description>{smurf.height}</Card.Description>
+//             </Card.Content>
+//           </Card>
+//         )
+//       })}
+//     </div>
+//   );
+// };
+
+// const mapStateToProps = state => {
+//   return {
+//     smurfs: state.smurfs
+//   };
+// };
+
+// export default connect(mapStateToProps, { fetchSmurfs })(SmurfList);

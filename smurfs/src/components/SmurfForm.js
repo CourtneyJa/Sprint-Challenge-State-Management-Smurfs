@@ -1,51 +1,73 @@
-import React, { useState } from "react";
-import { addSmurf } from "../Actions/Action";
-import { connect } from "react-redux";
+// import React, { useState, useEffect } from "react";
+// import { addSmurf, fetchSmurfs, removeSmurf } from "../Actions/Action";
+// import { connect } from "react-redux";
 
-const SmurfForm = props => {
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  const [height, setHeight] = useState("");
+// const SmurfForm = props => {
+//   const [smurf, setSmurf] = useState({ name: "", age: "", height: "" });
+//   useEffect (()=>{
+//     fetchSmurfs()
+//   }, []);
 
-  const nameChange = e => {
-    setName(e.target.value);
-  };
+//   const handleChange = e => {
+//     setSmurf({
+//       ...smurf,
+//       [e.target.name]: e.target.value
+//     });
+//   };
 
-  const ageChange = e => {
-    setAge(e.target.value);
-  };
+//   const handleSubmit = e => {
+//     e.prevent.default();
+//     const newSmurf = {
+//       ...smurf, id: Date.now()
+//     }
+//     props.addSmurf(newSmurf);
+//     setSmurf({ name: "", age: "", height: "", id: Date.now() });
+//   };
 
-  const heightChange = e => {
-    setHeight(e.target.value);
-  };
+//   const handleRemove = e => {
+//     e.prevent.default();
+//     removeSmurf(e.target.value)
+//   };
 
-  const handleSubmit = e => {
-    let newSmurf = {
-      name: name,
-      age: age,
-      height: height
-    };
-    props.addSmurf(newSmurf);
-  };
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <input
+//         name="name"
+//         onChange={handleChange}
+//         type="text"
+//         value={smurf.name}
+//         placeholder="name"
+//       />
+//       <input
+//         name="age"
+//         onChange={handleChange}
+//         type="text"
+//         value={smurf.age}
+//         placeholder="age"
+//       />
+//       <input
+//         name="height"
+//         onChange={handleChange}
+//         type="text"
+//         value={smurf.height}
+//         placeholder="height"
+//       /><br></br>
+//       <button onClick={() => props.addSmurf()} type="submit">
+//         Add New Villager
+//       </button>
+//       <button
+//             type="submit"
+//             onClick={handleRemove} value={smurf.id}
+//           >
+//             X
+//       </button>
+//     </form>
+//   );
+// };
 
-  return (
-    <form onChange={handleSubmit}>
-      <input
-        onChange={nameChange}
-        type="text"
-        value={name}
-        placeholder="name"
-      />
-      <input onChange={ageChange} type="text" value={age} placeholder="age" />
-      <input
-        onChange={heightChange}
-        type="text"
-        value={height}
-        placeholder="height"
-      />
-      <button type="submit">Add New Villager</button>
-    </form>
-  );
-};
-
-export default connect(null, { addSmurf })(SmurfForm);
+// const mapStateToProps = state => {
+//   return {
+//     state
+//   };
+// };
+// export default connect(mapStateToProps, { addSmurf })(SmurfForm);
