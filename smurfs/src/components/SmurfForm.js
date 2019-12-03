@@ -14,13 +14,18 @@ const SmurfForm = props => {
     let name = e.target.value;
     setNewSmurf({
       ...newSmurf,
-      [name]: e.target.value
+      [e.target.name]: e.target.value
     })
   };
 
   const handleSubmit = e => {
     e.preventDefault();
     props.addSmurf(newSmurf);
+    setNewSmurf({
+      name:'',
+      age: '',
+      height: ''
+    })
     console.log("it's happening!", newSmurf);
   };
 
@@ -32,21 +37,21 @@ const SmurfForm = props => {
           type="text"
           placeholder="name"
           onChange={handleChanges}
-          value={props.name}
+          value={newSmurf.name}
         />
         <input
           name="age"
           type="text"
           placeholder="age"
           onChange={handleChanges}
-          value={props.age}
+          value={newSmurf.age}
         />
         <input
           name="height"
           type="text"
           placeholder="height"
           onChange={handleChanges}
-          value={props.height}
+          value={newSmurf.height}
         />
         <button type="submit" onClick={handleSubmit}>
           Add New Villager
